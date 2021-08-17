@@ -5,7 +5,7 @@ FROM node:12
 COPY entrypoint.sh /entrypoint.sh
 COPY .npmrc.ci /.npmrc.ci
 
-# make it executable 
+# make the script executable 
 RUN chmod +x /entrypoint.sh
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)

@@ -37,3 +37,30 @@ jobs:
         env:
           PRIVATE_REPO_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
 ```
+
+## Usage with caching
+
+```yaml
+name: Testing and Linting 😄
+
+on: [pull_request]
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - uses: LoveToKnow/ltk-pr-action@main
+        env:
+          PRIVATE_REPO_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
+
+```
