@@ -14,7 +14,7 @@ This Dockerized action is using **Node v12**
 - `test`
 - `lint`
 
-In case they are not present the action will fail 😄
+In case they are not present the action will NOT execute them 😄
 
 2. In your action make sure to configure the env variable of `PRIVATE_REPO_PAT`
 - This is used for installing private packages
