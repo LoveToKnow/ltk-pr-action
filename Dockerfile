@@ -3,6 +3,7 @@ FROM node:12
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
+COPY .npmrc.ci /.npmrc.ci
 
 # make it executable 
 RUN chmod +x /entrypoint.sh

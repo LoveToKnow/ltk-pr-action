@@ -4,9 +4,7 @@ LERNA=lerna.json
 
 echo "Starting automated PR testing"
 
-printf "//npm.pkg.github.com/:_authToken=$env.PRIVATE_REPO_PAT" >> .npmrc
-
-npm install
+npm install --userconfig /.npmrc.ci
 
 # Check if a lerna.json exists; if it exists it is a lerna project :)
 if [ -f "$LERNA" ]; then
