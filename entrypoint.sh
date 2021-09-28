@@ -1,4 +1,8 @@
 #!/bin/sh -l
+
+# Exit immediately if something goes wrong
+set -e
+
 # consts
 LERNA=lerna.json
 
