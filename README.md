@@ -2,7 +2,7 @@
 
 A shared github action for our PR's : node setup, running unit tests and linting scripts
 
-This Dockerized action is using **Node v12**
+This Dockerized action is using **Node v14**
 
 ## What it does
 - Installs the dependencies as defined in your project's `package.json`
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: LoveToKnow/ltk-pr-action@main
+      - uses: LoveToKnow/ltk-pr-action@node-14
         env:
           PRIVATE_REPO_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
 ```
@@ -59,7 +59,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - uses: LoveToKnow/ltk-pr-action@main
+      - uses: LoveToKnow/ltk-pr-action@node-14
         env:
           PRIVATE_REPO_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
 
