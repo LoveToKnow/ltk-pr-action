@@ -1,5 +1,9 @@
 # Container image that runs your code
-FROM node:12-alpine
+FROM node:14-alpine
+
+# Install tools needed
+RUN apk add --no-cache \
+            jq
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
