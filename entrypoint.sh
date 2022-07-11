@@ -13,6 +13,7 @@ npm install --userconfig /.npmrc.ci
 # Check if a lerna.json exists; if it exists it is a lerna project :)
 if [ -f "$LERNA" ]; then
     echo "This project uses lerna..."
+    npx lerna bootstrap
     npx lerna link --force-local
 fi
 
