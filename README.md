@@ -2,7 +2,7 @@
 
 A shared github action for our PR's : node setup, running unit tests and linting scripts
 
-This Dockerized action is using **Node v14**
+This Dockerized action is using **Node v16**
 
 ## What it does
 - Installs the dependencies as defined in your project's `package.json`
