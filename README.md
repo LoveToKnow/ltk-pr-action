@@ -2,7 +2,7 @@
 
 A shared github action for our PR's : node setup, running unit tests and linting scripts
 
-This Dockerized action is using **Node v18**
+This Dockerized action is using **Node v20**
 
 ## What it does
 
